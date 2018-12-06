@@ -376,6 +376,7 @@ type TocContent struct {
 
 func (s *Safari) fetchTOC(id string) *map[string]TocContent {
 	url := "api/v1/book/" + id + "/flat-toc/"
+	logrus.Info("fetchTOC: trying to get: " + url)
 	body, err := s.fetchResource(url)
 	if err != nil {
 		fmt.Println(err)
@@ -385,7 +386,8 @@ func (s *Safari) fetchTOC(id string) *map[string]TocContent {
 	var raw []TocContent
 	err = json.Unmarshal([]byte(body), &raw)
 	if err != nil {
-		fmt.Println(err)
+		logrus.Error("json.Unmarshall err: ", err)
+		// fmt.Println(err)
 		return nil
 	}
 
@@ -440,6 +442,7 @@ func (s *Safari) fetchChapterContent(index int, id string, url string, sem chan 
 	}
 	content_url := meta.Content
 	content_uri := strings.Replace(content_url, s.baseUrl, "", -1)
+	logrus.Info("fetchChapterContent: content_uri : " + content_uri )
 	content, err := s.fetchResource(content_uri)
 
 	var chapter Chapter
