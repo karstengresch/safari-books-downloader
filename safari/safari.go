@@ -309,8 +309,8 @@ func (s *Safari) authorizeUser(username string, password string) error {
 // Fetch safari resources by given url
 func (s *Safari) fetchResource(url string) (string, error) {
 	tmpUri := s.baseUrl + "/" + url
+	// TODO FIXME Find out the origin of the double slash and erase the problem where it originates.
 	uri := strings.Replace(tmpUri, "//api", "/api", -1)
-
 	logrus.Info("going to fetch uri " + uri + " with token " + s.accessToken)
 	req, err := http.NewRequest("GET", uri, nil)
 	if err != nil {
