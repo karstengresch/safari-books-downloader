@@ -1,6 +1,6 @@
-package main
+package safari_books_downloader
 
-import "github.com/kkc/safari-books-downloader/internalmain"
+import "github.com/karstengresch/safari-books-downloader/internalmain"
 
 func main() {
 	internalmain.Main()
