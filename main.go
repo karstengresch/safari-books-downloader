@@ -1,4 +1,4 @@
-package safari_books_downloader
+package main
 
 import "github.com/karstengresch/safari-books-downloader/internalmain"
 
