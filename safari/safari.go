@@ -443,6 +443,7 @@ func (s *Safari) fetchChapterContent(index int, id string, url string, sem chan 
 	content_url := meta.Content
 	content_uri := strings.Replace(content_url, s.baseUrl, "", -1)
 	logrus.Info("fetchChapterContent: content_uri : " + content_uri )
+	// wumba
 	content, err := s.fetchResource(content_uri)
 
 	var chapter Chapter
