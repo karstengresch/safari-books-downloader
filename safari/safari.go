@@ -308,7 +308,8 @@ func (s *Safari) authorizeUser(username string, password string) error {
 
 // Fetch safari resources by given url
 func (s *Safari) fetchResource(url string) (string, error) {
-	uri := s.baseUrl + "/" + url
+	tmpUri := s.baseUrl + "/" + url
+	uri := strings.Replace(tmpUri, "//api", "/api", -1)
 
 	logrus.Info("going to fetch uri " + uri + " with token " + s.accessToken)
 	req, err := http.NewRequest("GET", uri, nil)
