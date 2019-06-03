@@ -179,7 +179,7 @@ type Safari struct {
 func NewSafari() *Safari {
 	// clientSecret and clientId comes from https://github.com/nicohaenggi/SafariBooks-Downloader/blob/master/lib/safari/index.js
 	safari := &Safari{
-		baseUrl:      "https://www.safaribooksonline.com",
+		baseUrl:      "https://learning.oreilly.com",
 		clientSecret: "f52b3e30b68c1820adb08609c799cb6da1c29975",
 		clientId:     "446a8a270214734f42a7",
 		books:        make(map[string]Book),
@@ -443,7 +443,7 @@ func (s *Safari) fetchChapterContent(index int, id string, url string, sem chan 
 	}
 	content_url := meta.Content
 	content_uri := strings.Replace(content_url, s.baseUrl, "", -1)
-	logrus.Info("fetchChapterContent: content_uri : " + content_uri )
+	logrus.Info("fetchChapterContent: content_uri : " + content_uri)
 	// wumba
 	content, err := s.fetchResource(content_uri)
 
