@@ -15,6 +15,8 @@ import (
 	"strings"
 	"text/template"
 	"time"
+
+	"github.com/Sirupsen/logrus"
 )
 
 // Ebook Chapter
@@ -165,8 +167,10 @@ func (e *Ebook) downloadImages() {
 		defer resp.Body.Close()
 
 		if resp.StatusCode != 200 {
-			err = errors.New("Error: status code != 200, actual status code '" + resp.Status + "'")
-			panic(err)
+			errorText := "Error: status code != 200, actual status code '" + resp.Status + "'"
+			err = errors.New(errorText)
+			// panic(err)
+			logrus.Info("Could not download image for url: '" + url + "'. Book could be incomplete.\n" + errorText)
 		}
 
 		body, err := ioutil.ReadAll(resp.Body)

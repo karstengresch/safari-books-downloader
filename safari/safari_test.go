@@ -34,5 +34,5 @@ import "testing"
 
 func TestSafariChapters(t *testing.T) {
 	safari := NewSafari()
-	safari.FetchBookById("9781449317904", "", "")
+	safari.FetchBookById("9781484249857", "", "")
 }
