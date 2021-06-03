@@ -287,7 +287,7 @@ func (s *Safari) authorizeUser(username string, password string) error {
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		return errors.New("Login fail, please double check your username and password")
+		return errors.New("login failed, please double check your username and password - error code: " + resp.Status)
 	}
 
 	logrus.Info("login successfully")
