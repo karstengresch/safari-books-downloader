@@ -5,13 +5,13 @@ import (
 	"fmt"
 	"os"
 	"strconv"
-	"github.com/karstengresch/safari-books-downloader/got safari"
+	"github.com/karstengresch/safari-books-downloader/safari"
 	"github.com/karstengresch/safari-books-downloader/ebook"
 	"github.com/karstengresch/safari-books-downloader/utils"
 	homedir "github.com/mitchellh/go-homedir"
 	"github.com/spf13/cobra"
 	"github.com/spf13/viper"
-	logrus "github.com/Sirupsen/logrus"
+	logrus "github.com/sirupsen/logrus"
 )
 
 var cfgFile string

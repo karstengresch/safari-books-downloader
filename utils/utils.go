@@ -3,7 +3,7 @@ package utils
 import (
 	"os"
 
-	logrus "github.com/Sirupsen/logrus"
+	logrus "github.com/sirupsen/logrus"
 )
 
 // StopOnErr exits on any error after logging it.

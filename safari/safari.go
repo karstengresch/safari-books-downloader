@@ -12,7 +12,7 @@ import (
 	"sync"
 	"time"
 
-	logrus "github.com/Sirupsen/logrus"
+	logrus "github.com/sirupsen/logrus"
 )
 
 type ChapterMeta struct {
@@ -178,10 +178,12 @@ type Safari struct {
 
 func NewSafari() *Safari {
 	// clientSecret and clientId comes from https://github.com/nicohaenggi/SafariBooks-Downloader/blob/master/lib/safari/index.js
+	// was id 446a8a270214734f42a7
+	// secret f52b3e30b68c1820adb08609c799cb6da1c29975
 	safari := &Safari{
 		baseUrl:      "https://learning.oreilly.com",
-		clientSecret: "f52b3e30b68c1820adb08609c799cb6da1c29975",
-		clientId:     "446a8a270214734f42a7",
+		clientSecret: "5cca9a3110ba22e0f959ea3aaf7ff2eeebd4e3e3",
+		clientId:     "abe1f078df4c41c02917",
 		books:        make(map[string]Book),
 	}
 
